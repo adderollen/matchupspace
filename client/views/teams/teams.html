@@ -1,0 +1,47 @@
+<template name="teams">
+	<div class="page">
+		{{#if teams}}
+		<table>
+			<tr>
+				<th>Team Name</th>
+				<th>Contact</th>
+				<th>Looking for</th>
+				<th>Extra information</th>
+			</tr>
+			{{#each teams}}
+			{{> teamItem}}
+			{{/each}}
+		</table>
+		{{else}}
+			<h2>No teams have signed up to find more team members</h2>
+		{{/if}}
+	</div>
+</template>
+
+<template name="teamItem">
+<tr>
+	<td>{{name}}</td>
+	<td>{{email}}</td>
+	<td>{{need}}</td>
+</tr>
+</template>
+
+<template name="teamsignup">
+	<div class="page">
+		<p>By signing up your team here, people who are looking for a team can find you can get your contact information. If you only want to see the people that are looking for a team continue <a href="/persons">here</a></p>
+		<form>
+			<label for="name">Team name:</label>
+			<input id="name" type="text">
+			<label for="contact">Contact email:</label>
+			<input id="contact" type="email">
+			<label for="need">What are you looking for:</label>
+			<input id="need" type="checkbox" value="Developer">Developer
+			<input id="need" type="checkbox" value="Designer">Designer
+			<input id="need" type="checkbox" value="Visionary">Visionary
+			<label for="needs">Specific needs:</label>
+			<textarea id="needs" rows="2" cols="10"></textarea>
+			<input type="submit" value="Add your team">
+		</form>
+	</div>
+
+</template>
