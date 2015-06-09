@@ -35,8 +35,7 @@ Template.signup.events({
 		var designskill = parseInt(evt.target.designskill.value);
 		var visionaryskill = parseInt(evt.target.visionaryskill.value);
 		var skills = evt.target.skills.value;
-		console.log(name, email, devskill)
-		/*Persons.insert({
+		Persons.insert({
 			name: name,
 			email: email,
 			devskill: devskill,
@@ -45,6 +44,6 @@ Template.signup.events({
 			skills: skills
 		})
 
-		Router.go('/teams')*/
+		Router.go('/teams')
 	}
 })

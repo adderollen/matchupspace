@@ -1,43 +1,52 @@
 <template name="persons">
-<div class="page">
-	<table>
-		{{#each persons}}
+	<div id="persons" class="page">
+		{{> header}}
+		<h1>Here you can find all the individuals that are looking for a team</h1>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Contact</th>
+				<th>Skills</th>
+				<th>What more </th>
+			</tr>
+			{{#each persons}}
 			{{> personItem}}
-		{{/each}}
-	</table>
-</div>
+			{{/each}}
+		</table>
+	</div>
 </template>
 
 <template name="personItem">
-<tr>
-	<td>{{name}}</td>
-	<td>{{email}}</td>
-	<td>{{skills devskills designskills visionaryskills}}</td>
-	<td>{{skillset}}</td>
-</tr>
+	<tr>
+		<td>{{name}}</td>
+		<td>{{email}}</td>
+		<td>Developer:{{devskill}} Designer:{{designskill}} Visionary:{{visionaryskill}}</td>
+		<td>{{skills}}</td>
+	</tr>
 </template>
 
 
 <template name="signup">
-<div class="page">
-	<p>By signing up here, teams who are looking for some more team members can find you and get your contact information. If you only want to see the teams that are looking for more team members, continue <a href="/teams">here</a></p>
-	<form>
-		<label for="name">First & Surname:</label>
-		<input id="name" name="name" type="text" required>
-		<label for="email">Email:</label>
-		<input id="email" name="email" type="email" required>
-		<h2>How much do you see yourself as a...</h2>
-		<label for="devslider">... developer? <input name="devskill" type="number" class="devvalue" required></label>
-		<div class="slider" id="devslider"></div>
-		<label for="designslider">... designer? <input name="designskill" type="number" class="designvalue" required></label>
-		<div class="slider" id="designslider"></div>
-		<label for="visionaryslider">... visionary? <input name="visionaryskill" type="number" class="visionaryvalue" required></label>
-		<div class="slider" id="visionaryslider"></div>
-		<label for="skills">What skills do you got?</label>
-		<textarea id="skills" rows="3" cols="30" name="skills" placeholder="Java, back-end, Photoshop, Business development, you name it!"></textarea>
+	<div id="signup" class="page">
+		{{> header}}
+		<p>By signing up here, teams who are looking for some more team members can find you and get your contact information. If you only want to see the teams that are looking for more team members, continue <a href="/teams">here</a></p>
+		<form>
+			<label>First & Surname:</label>
+			<input id="name" name="name" type="text" required>
+			<label for="email">Email:</label>
+			<input id="email" name="email" type="email" required>
+			<p>How much do you see yourself as a...</p>
+			<label for="devslider">... developer? <input name="devskill" type="number" class="devvalue" required></label>
+			<div class="slider" id="devslider"></div>
+			<label for="designslider">... designer? <input name="designskill" type="number" class="designvalue" required></label>
+			<div class="slider" id="designslider"></div>
+			<label for="visionaryslider">... visionary? <input name="visionaryskill" type="number" class="visionaryvalue" required></label>
+			<div class="slider" id="visionaryslider"></div>
+			<label for="skills">What skills do you got?</label>
+			<textarea id="skills" rows="3" cols="30" name="skills" placeholder="Java, back-end, Photoshop, Business development, you name it!"></textarea>
 
-		<input type="submit" value="Submit">
-	</form>
-</div>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
 
 </template>

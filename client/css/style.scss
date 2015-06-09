@@ -1,0 +1,32 @@
+
+$sans: 'Helvetica Neue', sans-serif;
+
+html {
+	width: 100%;
+	font-family: $sans;
+}
+
+.page {
+	width: 58%;
+	margin: 0 auto;
+	position: relative;
+}
+
+form {
+	width: 70%;
+	margin: 0 auto;
+
+}
+
+form {
+	label {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	input {
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+	}
+}
